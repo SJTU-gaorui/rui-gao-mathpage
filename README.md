@@ -4,7 +4,7 @@ An English academic homepage for Rui Gao, Associate Research Fellow at Shaanxi N
 
 **Contact:** rui.gao@snnu.edu.cn
 
-The website presents research interests, publications, preprints, academic background, invited talks, a research visit, teaching, and selected honors. It uses a traditional academic layout with serif typography, restrained blue links, an unobtrusive navigation column, and responsive styles for smaller screens.
+The website presents research interests, publications, preprints, academic background, and invited talks, with an emphasis on geometric variational problems in higher codimension. It uses a traditional academic layout with serif typography, restrained blue links, an unobtrusive navigation column, and responsive styles for smaller screens.
 
 ## Project files
 
