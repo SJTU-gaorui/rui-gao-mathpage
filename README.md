@@ -13,7 +13,7 @@ The website presents research interests, publications, preprints, academic backg
 | `dist/index.html` | English homepage (default) |
 | `dist/zh.html` | Simplified Chinese homepage |
 | `dist/style.css` | Desktop, mobile, accessibility, and print styles |
-| `dist/assets/rui-gao-avatar.webp` | Optimized illustrated portrait shared by both pages |
+| `dist/assets/rui-gao-avatar-v2.webp` | Optimized illustrated portrait shared by both pages |
 | `dist/favicon.svg` | Site icon |
 | `dist/.nojekyll` | Plain static hosting |
 | `.github/workflows/pages.yml` | GitHub Pages deployment |
