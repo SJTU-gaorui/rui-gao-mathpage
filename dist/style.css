@@ -20,11 +20,17 @@ sup { font-size: .7em; line-height: 0; }
 .page { max-width: 1160px; padding: 0 48px; margin: 0 auto; }
 .masthead { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-top: 5px solid var(--navy); border-bottom: 1px solid var(--line); padding: 19px 0 18px; font: .875rem/1.5 system-ui, sans-serif; color: var(--muted); }
 .wordmark { font-size: 1rem; font-weight: 650; letter-spacing: .02em; color: var(--navy); text-decoration: none; }
+.masthead-meta { display: flex; align-items: center; justify-content: flex-end; gap: 24px; }
+.language-switch { display: flex; align-items: center; gap: 9px; white-space: nowrap; }
+.language-switch a { display: inline-flex; align-items: center; min-height: 36px; padding: 3px 2px; text-decoration: none; }
+.language-switch a[aria-current="page"] { color: var(--navy); font-weight: 650; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: .35em; }
+.language-switch a:hover { text-decoration: underline; }
+.language-switch > span { color: var(--line); }
 .layout { display: grid; grid-template-columns: 185px minmax(0, 1fr); column-gap: 65px; align-items: start; }
 .sidebar { position: sticky; top: 32px; padding-top: 55px; font: .875rem/1.6 system-ui, sans-serif; }
-nav { display: flex; flex-direction: column; gap: 2px; border-left: 1px solid var(--line); }
-nav a { display: block; padding: 7px 0 7px 17px; text-decoration: none; color: var(--muted); border-left: 2px solid transparent; margin-left: -1px; }
-nav a:hover, nav a:focus-visible { color: var(--navy); border-left-color: var(--accent); background: #f7f9fa; }
+.sidebar nav { display: flex; flex-direction: column; gap: 2px; border-left: 1px solid var(--line); }
+.sidebar nav a { display: block; padding: 7px 0 7px 17px; text-decoration: none; color: var(--muted); border-left: 2px solid transparent; margin-left: -1px; }
+.sidebar nav a:hover, .sidebar nav a:focus-visible { color: var(--navy); border-left-color: var(--accent); background: #f7f9fa; }
 .sidebar-contact { margin-top: 35px; }
 .eyebrow { font: 600 .75rem/1.65 system-ui, sans-serif; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
 .sidebar-contact .eyebrow { display: block; margin-bottom: 9px; }
@@ -34,6 +40,9 @@ main { min-width: 0; padding-top: 50px; }
 section { margin-bottom: 47px; scroll-margin-top: 32px; }
 .intro { margin-bottom: 41px; }
 .intro > .eyebrow { color: var(--accent); margin-bottom: 14px; }
+.profile-header { display: grid; grid-template-columns: minmax(0, 1fr) 176px; align-items: center; gap: 28px; }
+.profile-identity { min-width: 0; }
+.avatar { display: block; width: 100%; height: auto; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 4px; background: #e8eef3; }
 h1 { font: 400 clamp(2.8rem, 5.8vw, 3.9rem)/1.08 Georgia, "Times New Roman", serif; letter-spacing: -.035em; color: var(--navy); margin: 0 0 20px; }
 .position { font-size: 1.1875rem; margin-bottom: 0; }
 .affiliation { margin: 0; }
@@ -87,26 +96,35 @@ footer a { color: inherit; }
 .skip-link { position: absolute; top: -100px; left: 16px; padding: 10px 16px; background: white; z-index: 10; font-family: system-ui, sans-serif; }
 .skip-link:focus { top: 10px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+html:lang(zh-Hans) body { font-family: Georgia, "Times New Roman", "Noto Serif CJK SC", "Songti SC", "STSong", serif; line-height: 1.9; }
+html:lang(zh-Hans) h1, html:lang(zh-Hans) h2 { font-family: "Noto Serif CJK SC", "Songti SC", "STSong", serif; letter-spacing: .035em; }
+html:lang(zh-Hans) .eyebrow { letter-spacing: .13em; }
+html:lang(zh-Hans) .timeline > div { grid-template-columns: 164px minmax(0, 1fr); }
+html:lang(zh-Hans) .talks li { grid-template-columns: 120px minmax(0, 1fr); }
+html:lang(zh-Hans) .talks strong { line-height: 1.8; }
 @media (max-width: 900px) {
   .page { padding: 0 30px; }
   .layout { grid-template-columns: 165px minmax(0, 1fr); column-gap: 36px; }
-  .timeline > div { grid-template-columns: 1fr; gap: 7px; }
+  .profile-header { grid-template-columns: minmax(0, 1fr) 140px; gap: 20px; }
+  .timeline > div, html:lang(zh-Hans) .timeline > div { grid-template-columns: 1fr; gap: 7px; }
 }
 @media (max-width: 680px) {
   body { font-size: 1rem; }
   .page { padding: 0 22px; }
   .masthead { align-items: center; font-size: .8125rem; }
-  .masthead > span { text-align: right; max-width: 160px; }
+  .masthead-meta { flex-direction: column; align-items: flex-end; gap: 1px; }
+  .masthead-affiliation { text-align: right; max-width: 200px; }
   .layout { display: flex; flex-direction: column; gap: 0; }
   .sidebar { position: static; width: 100%; padding-top: 16px; }
-  nav { flex-direction: row; flex-wrap: wrap; gap: 3px 18px; border: 0; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-  nav a { border: 0; padding: 6px 0; margin: 0; font-size: .875rem; }
-  nav a:hover { background: none; text-decoration: underline; }
+  .sidebar nav { flex-direction: row; flex-wrap: wrap; gap: 3px 18px; border: 0; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .sidebar nav a { border: 0; padding: 6px 0; margin: 0; font-size: .875rem; }
+  .sidebar nav a:hover { background: none; text-decoration: underline; }
   .sidebar-contact { margin-top: 16px; }
   .sidebar-contact .eyebrow, .sidebar-contact address { display: none; }
   .sidebar-contact .email { margin: 0; }
   main { padding-top: 30px; width: 100%; }
   .intro > .eyebrow { max-width: 330px; }
+  .profile-header { grid-template-columns: minmax(0, 1fr) 128px; }
   .intro-text { margin-top: 24px; }
   h1 { margin-bottom: 17px; }
   h2 { font-size: 1.5rem; }
@@ -120,11 +138,15 @@ footer a { color: inherit; }
   .honors li { grid-template-columns: 84px minmax(0, 1fr); gap: 12px; }
   footer { flex-direction: column; font-size: .8125rem; }
 }
+@media (max-width: 460px) {
+  .profile-header { grid-template-columns: 1fr; gap: 22px; }
+  .avatar { grid-row: 1; width: 128px; }
+}
 @media print {
   body { font-size: 10pt; }
   .page { max-width: none; padding: 0; }
   .layout { display: block; }
-  .sidebar, .skip-link, footer { display: none; }
+  .sidebar, .skip-link, .language-switch, footer { display: none; }
   main { padding-top: 24px; }
   .masthead { border-top: 2px solid var(--navy); }
   h1 { font-size: 30pt; }

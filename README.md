@@ -1,6 +1,6 @@
 # Rui Gao — Academic Homepage
 
-An English academic homepage for Rui Gao, Associate Research Fellow at Shaanxi Normal University since July 2026.
+An English and Simplified Chinese academic homepage for Rui Gao, Associate Research Fellow at Shaanxi Normal University since July 2026. English is the default language at the site root; the language links in the top-right corner switch between the two versions.
 
 **Contact:** rui.gao@snnu.edu.cn
 
@@ -10,8 +10,10 @@ The website presents research interests, publications, preprints, academic backg
 
 | File | Purpose |
 | --- | --- |
-| `dist/index.html` | All website content and publication links |
+| `dist/index.html` | English homepage (default) |
+| `dist/zh.html` | Simplified Chinese homepage |
 | `dist/style.css` | Desktop, mobile, accessibility, and print styles |
+| `dist/assets/rui-gao-avatar.webp` | Optimized illustrated portrait shared by both pages |
 | `dist/favicon.svg` | Site icon |
 | `dist/.nojekyll` | Plain static hosting |
 | `.github/workflows/pages.yml` | GitHub Pages deployment |
@@ -34,11 +36,15 @@ Subsequent changes to `dist` on `main` deploy automatically. Workflow configurat
 
 ## Updating the page
 
-Edit the relevant section in `dist/index.html`, then update the “Updated” date in its footer. Existing paper list entries can be copied to add a publication. The ordered lists number themselves automatically. Add DOI or arXiv links only when a public record exists. All local asset links are relative, so the page works both at a domain root and under a project path.
+Edit the corresponding sections in both `dist/index.html` and `dist/zh.html`, then update the date in each footer. Keep section IDs, publication links, and academic facts synchronized. Existing paper list entries can be copied to add a publication. The ordered lists number themselves automatically. Add DOI or arXiv links only when a public record exists. All local asset and language links are relative, so the pages work both at a domain root and under a project path.
+
+Language switching uses ordinary HTML links and works without JavaScript, cookies, or browser-language detection. The root always serves English. The Chinese page translates the biography, research, academic background, talks, and interface; paper titles, author names, and journal names retain their original bibliographic form for accurate searching and citation. Both pages include language metadata and an accessible current-language indicator.
 
 ## Content and editorial notes
 
 Biographical information is based on the supplied Chinese CV, with the current appointment and email explicitly updated by Rui Gao. The original CV, phone numbers, and former Shanghai contact address are not included in this repository or the website.
+
+The avatar was generated from Rui Gao’s supplied ID photograph as a restrained editorial cartoon, preserving the hairstyle, browline glasses, white shirt, and facial likeness. Fine navy linework and a pale blue-gray background coordinate with the existing academic design. Only the optimized illustrated avatar is published; the original photograph is not included in this repository.
 
 The presentation draws on the direct, content-focused structure of [Terence Tao’s academic homepage](https://www.math.ucla.edu/~tao/) and [MIT mathematics faculty pages](https://math.mit.edu/directory/profile.html?pid=50); the page implementation is original.
 
