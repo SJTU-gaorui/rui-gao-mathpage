@@ -4,7 +4,7 @@ An English and Simplified Chinese academic homepage for Rui Gao, Associate Resea
 
 **Contact:** rui.gao@snnu.edu.cn
 
-The website presents research interests, publications, preprints, academic background, and invited talks, with an emphasis on geometric variational problems in higher codimension. It uses a traditional academic layout with serif typography, restrained blue links, an unobtrusive navigation column, and responsive styles for smaller screens.
+The website presents research interests, publications, preprints, academic background, and invited talks, with an emphasis on geometric variational problems in higher codimension. The preprint list includes Gao–Zhu's September 2026 arXiv paper on min-max theory and free-boundary (H)-disks. It uses a traditional academic layout with serif typography, restrained blue links, an unobtrusive navigation column, and responsive styles for smaller screens.
 
 ## Project files
 
@@ -13,12 +13,13 @@ The website presents research interests, publications, preprints, academic backg
 | `dist/index.html` | English homepage (default) |
 | `dist/zh.html` | Simplified Chinese homepage |
 | `dist/style.css` | Desktop, mobile, accessibility, and print styles |
+| `dist/page-views.js` | Shared page-view counter with localized loading and error states |
 | `dist/assets/rui-gao-avatar-v2.webp` | Optimized illustrated portrait shared by both pages |
 | `dist/favicon.svg` | Site icon |
 | `dist/.nojekyll` | Plain static hosting |
 | `.github/workflows/pages.yml` | GitHub Pages deployment |
 
-There are no package dependencies, build tools, external fonts, analytics, or required JavaScript. Open `dist/index.html` directly to read the page locally.
+There are no package dependencies, build tools, or external fonts. Content and language switching work without JavaScript. A small optional script displays the shared page-view counter. Open `dist/index.html` directly to read the page locally; local viewing does not increment the public count.
 
 ## GitHub Pages
 
@@ -39,6 +40,16 @@ Subsequent changes to `dist` on `main` deploy automatically. Workflow configurat
 Edit the corresponding sections in both `dist/index.html` and `dist/zh.html`, then update the date in each footer. Keep section IDs, publication links, and academic facts synchronized. Existing paper list entries can be copied to add a publication. The ordered lists number themselves automatically. Add DOI or arXiv links only when a public record exists. All local asset and language links are relative, so the pages work both at a domain root and under a project path.
 
 Language switching uses ordinary HTML links and works without JavaScript, cookies, or browser-language detection. The root always serves English. The Chinese page translates the biography, research, academic background, talks, and interface; paper titles, author names, and journal names retain their original bibliographic form for accurate searching and citation. Both pages include language metadata and an accessible current-language indicator.
+
+## Page-view counter
+
+The footer uses the public [CounterAPI.com API](https://counterapi.com/#options) with namespace `sjtu-gaorui.github.io`, action `view`, and key `rui-gao-mathpage`. Both language pages share this key; changing it starts a separate counter. Counting begins on 28 September 2026, without estimating earlier traffic.
+
+Each published page load, including a language switch, sends one counting request. This measures approximate page views, not unique people; the provider may filter duplicate or abusive requests. Local files, preview sites, and forks do not send requests. Browser Do Not Track and Global Privacy Control preferences are respected.
+
+The counter uses the provider's durable storage, not browser storage. Requests omit credentials, cookies, and referrers; no external JavaScript is loaded. The provider still receives normal connection metadata such as the IP address and browser headers, as described in its [privacy FAQ](https://counterapi.com/#faq).
+
+The script times out after ten seconds and shows a localized unavailable state on failure, without blocking the homepage or retrying an increment. JavaScript-disabled visitors see an explanatory note. A non-incrementing diagnostic read is available at `https://counterapi.com/api/sjtu-gaorui.github.io/view/rui-gao-mathpage?readOnly=true`.
 
 ## Content and editorial notes
 
